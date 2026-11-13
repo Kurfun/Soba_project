@@ -1,0 +1,106 @@
+/* Palette inspired by the NTPU reference: university blue with soft neutral surfaces. */
+:root {
+  color: #26324a;
+  background: #fafaf9;
+  --green: #263b86;
+  --ink: #26324a;
+  --muted: #788092;
+  --paper: #fafaf9;
+  --line: #e6e7eb;
+}
+
+body { background: #fafaf9; color: #26324a; }
+.topbar { border-color: #e6e7eb; }
+.brand { color: #26324a; }
+.brand-mark { border-color: #263b86; }
+.brand-mark span { background: #29804c; }
+.brand-mark span:nth-child(2) { background: #e6a52f; }
+.brand-mark span:nth-child(3) { background: #c9424b; }
+.brand-copy small { color: #788092; }
+.top-links a:hover, .text-link:hover { color: #c9424b; }
+
+.button-dark { background: #293b86; color: #fff; }
+.button-dark:hover { background: #1e2d6b; }
+.button-light { color: #354b88; border-color: #d8dce8; }
+.button-light:hover, .button-outline:hover { background: #f0f1f8; }
+.button-outline { color: #354b88; border-color: #d8dce8; }
+.plus-round { border-color: #aeb8d5; }
+
+.eyebrow { color: #788092; }
+.eyebrow-dot { background: #e6a52f; }
+.eyebrow-line { background: #d5d8e0; }
+.hero h1 { color: #26324a; }
+.hero h1 em, .title-period { color: #293b86; }
+.title-underline::after { background: #e8dfc5; }
+.hero-copy > p { color: #717b8b; }
+.note-icon, .section-heading h2 span { color: #d09a28; }
+.hero-note, .section-heading p { color: #848b98; }
+
+.hero-art { background: #e9edf5; }
+.hero-art::before { border-color: #293b8626; }
+.hero-art::after { border-color: #293b861c; }
+.art-sun { background: #f0bb5d; }
+.art-label, .art-caption { color: #52618e; }
+.art-ground { background: #d8deed; }
+.book-back { background: #30438b; color: #fff7e9; }
+.book-front { color: #293b86; border-left-color: #e8d8b6; }
+.book-front i, .art-sticker b { color: #d09a28; }
+.art-plant { border-color: #4f8a61; }
+.art-plant::before { background-color: #4f8a61; }
+.art-plant i { background: #4f8a61; }
+.art-leaf { color: #c9424b; }
+.leaf-two { color: #29804c; }
+.art-sticker { background: #fff9e8; color: #677084; }
+.hero-side-note { color: #8b91a0; }
+
+.stats-row { border-color: #e6e7eb; }
+.stat-intro { color: #697792; }
+.stat-spark { color: #d09a28; }
+.stat { border-color: #e2e4e9; }
+.stat b { color: #293b86; }
+.stat span, .stat-message { color: #858b98; }
+.stat-message strong { color: #495d8c; }
+
+.section-eyebrow { color: #7d8493; }
+.text-link { color: #354b88; }
+.toolbar { border-color: #e6e7eb; }
+.filter-button { color: #767e8d; }
+.filter-button.active { background: #e9ecf8; color: #293b86; }
+.filter-icon { color: #6577aa; }
+.filter-count { background: #f8f8fb; color: #68769c; }
+.search-box { border-color: #dfe1e7; }
+.search-icon { color: #6577aa; }
+.search-box input { color: #26324a; }
+.search-box kbd { border-color: #e2e4e9; color: #858b98; }
+.listing-header { color: #858b98; }
+.listing-header b, .sort-button { color: #4d5d7b; }
+
+.listing-card { border-color: #e9e9ed; }
+.card-kicker > span:first-child { color: #5b6e9d; }
+.card-body h3 { color: #303b54; }
+.card-body p { color: #7c8492; }
+.card-tags span { background: #f1f2f7; color: #65708c; }
+.category-badge { background: #fffdf7ed; color: #58627a; }
+.category-badge i, .location span { color: #d09a28; }
+.bookmark { color: #354b88; }
+.card-action { border-color: #e0e3ec; color: #354b88; }
+.card-action:hover { background: #e9ecf8; }
+.empty-state { border-color: #dfe1e7; color: #7a8495; }
+.view-more { color: #354b88; }
+
+.join-banner { background: #f2efe3; }
+.join-icon { border-color: #d9cfaa; color: #293b86; }
+.join-banner .eyebrow { color: #69749a; }
+.join-banner h2 { color: #26324a; }
+.join-banner p { color: #747e91; }
+.join-decoration { color: #e7e2d2; }
+footer { border-color: #e6e7eb; }
+.footer-copy { color: #858b98; }
+
+@media (max-width: 680px) {
+  .stats-row { border-color: #e6e7eb; }
+  .stat-message { border-color: #e6e7eb; }
+  .join-banner { background: #f2efe3; }
+}
+
+.cover-pink .cover-wash { background: #68789e40; }

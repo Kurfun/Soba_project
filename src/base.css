@@ -1,0 +1,9 @@
+/* Global reset only. Page styles are scoped: style.css + theme.css -> .landing, campus/campus.css -> .campus
+   (see postcss.config.js), so the cover page and the campus app no longer override each other. */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; min-width: 350px; }
+
+/* The cover/login wrapper replaces the old <body>/:root background. isolation keeps the
+   z-index:-1 title underline painting above the wrapper's background, as it did before. */
+.landing { min-height: 100vh; isolation: isolate; }
