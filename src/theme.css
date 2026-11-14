@@ -104,3 +104,9 @@ footer { border-color: #e6e7eb; }
 }
 
 .cover-pink .cover-wash { background: #68789e40; }
+
+/* 圓圈內的「＋」改用 CSS 繪製，確保正中央 */
+.plus-round { position: relative; }
+.plus-round::before, .plus-round::after { content: ""; position: absolute; left: 50%; top: 50%; background: currentColor; transform: translate(-50%, -50%); }
+.plus-round::before { width: 9px; height: 1.5px; }
+.plus-round::after { width: 1.5px; height: 9px; }

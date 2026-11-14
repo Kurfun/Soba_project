@@ -136,7 +136,7 @@ function pickLogin() {
             </div>
           </div>
 
-          <p class="demo-note">學生自製示範專案，非學校官方網站。帳號為示範用，請勿輸入真實密碼。</p>
+          <p class="demo-note">示範專案，非學校官方網站。帳號為示範用，請勿輸入真實密碼。</p>
         </section>
       </main>
     </div>

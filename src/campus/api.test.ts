@@ -322,3 +322,14 @@ describe('contact details are rejected', () => {
     expect(ok.status).toBe('open')
   })
 })
+
+describe('sample pictures', () => {
+  it('the sample umbrella and student ID listings carry a picture, and the owner can still edit them', () => {
+    const api = new MockApi()
+    const withPicture = api.getListings().filter((l) => l.image)
+    expect(withPicture.map((l) => l.title).sort()).toEqual(['拾獲：學生證', '拾獲：黑色折疊雨傘'])
+    const umbrella = withPicture.find((l) => l.title.includes('雨傘'))!
+    const updated = api.updateListing(umbrella.owner_id, umbrella.listing_id, { location_note: '失物招領櫃台 2 號' })
+    expect(updated.image).toBe(umbrella.image)
+  })
+})

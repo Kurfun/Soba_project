@@ -14,6 +14,8 @@ import {
   type PublicUser,
   type RequestStatus,
 } from './types'
+import umbrellaImage from './picture/BlackUmbrella.jpg'
+import studentIdImage from './picture/StudenntId.png'
 
 /**
  * A mock backend that mimics the REST rules from the proposal:
@@ -83,8 +85,8 @@ export class MockApi {
       [1, { ...base, type: 'giveaway', title: '軟體工程 第十版', category: '教科書', condition: '九成新，有少量螢光筆痕跡。', location: '圖書館', location_note: '一樓服務台旁書架，平日 9:00 到 17:00' }, 'open'],
       [2, { ...base, type: 'giveaway', title: '微積分課本與習題解答', category: '教科書', condition: '送給需要的同學，普通書況。', location: '商學院', location_note: '一樓大廳公佈欄旁' }, 'open'],
       [1, { ...base, type: 'swap', title: '管理學原理', want_book: '財務管理', category: '教科書', condition: '良好', location: '學生餐廳', location_note: '午休時間門口見面' }, 'open'],
-      [2, { ...base, type: 'lost_found', title: '拾獲：黑色折疊雨傘', found_place: '圖書館三樓', category: '生活用品', location: '圖書館', location_note: '失物招領櫃台' }, 'open'],
-      [1, { ...base, type: 'lost_found', title: '拾獲：學生證', found_place: '學生餐廳', category: '證件/錢包', location: '警衛室', location_note: '' }, 'resolved'],
+      [2, { ...base, type: 'lost_found', title: '拾獲：黑色折疊雨傘', image: umbrellaImage, found_place: '圖書館三樓', category: '生活用品', location: '圖書館', location_note: '失物招領櫃台' }, 'open'],
+      [1, { ...base, type: 'lost_found', title: '拾獲：學生證', image: studentIdImage, found_place: '學生餐廳', category: '證件/錢包', location: '警衛室', location_note: '' }, 'resolved'],
     ]
     for (const [owner, input, status] of samples) {
       const l = this.insertListing(owner, input)
@@ -115,7 +117,7 @@ export class MockApi {
     return actor.role === 'admin' || actor.user_id === l.owner_id
   }
 
-  private validate(input: ListingInput) {
+  private validate(input: ListingInput, keepImage = '') {
     if (input.type !== 'giveaway' && input.type !== 'swap' && input.type !== 'lost_found') {
       throw new ApiError(422, '類型不正確')
     }
@@ -143,7 +145,7 @@ export class MockApi {
     rejectContact('拾獲地點', input.found_place ?? '')
     rejectContact('地點備註', input.location_note ?? '')
     const image = input.image ?? ''
-    if (image) {
+    if (image && image !== keepImage) {
       if (!/^data:image\/(png|jpeg|gif|webp);base64,/.test(image)) throw new ApiError(422, '圖片格式不正確')
       if (image.length > IMAGE_MAX_DATA) throw new ApiError(422, '圖片檔案過大')
     }
@@ -271,7 +273,7 @@ export class MockApi {
       location: patch.location ?? l.location,
       location_note: patch.location_note ?? l.location_note,
     }
-    this.validate(merged)
+    this.validate(merged, l.image)
     if (patch.status && patch.status !== 'open' && patch.status !== doneStatus(l.type)) {
       throw new ApiError(422, '狀態不正確')
     }

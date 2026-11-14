@@ -26,9 +26,9 @@ const sections: { id: Section; label: string; icon: string }[] = [
 ]
 
 const listings: Listing[] = [
-  { id: 1, section: 'books', category: '免費贈送', title: '設計的心理學', description: '陪我度過好幾堂課的好書，希望下一位也能從中找到靈感。內頁乾淨，書角有一點使用痕跡。', location: '商學院一樓', time: '12 分鐘前', tone: 'cream', coverLabel: 'THE DESIGN\nOF EVERYDAY\nTHINGS', details: ['保存良好', '設計／藝術'], icon: '↗' },
+  { id: 1, section: 'books', category: '免費贈送', title: '心理學', description: '陪我度過好幾堂課的好書，希望下一位也能從中找到靈感。內頁乾淨，書角有一點使用痕跡。', location: '商學院一樓', time: '12 分鐘前', tone: 'cream', coverLabel: 'THE DESIGN\nOF EVERYDAY\nTHINGS', details: ['保存良好', '設計／藝術'], icon: '↗' },
   { id: 2, section: 'exchange', category: '教科書交換', title: '統計學｜想換經濟學原理', description: '手邊有一本統計學第三版，畫線很少，想交換經濟學原理或總體經濟學。', location: '圖書館前廣場', time: '38 分鐘前', tone: 'sage', coverLabel: '統計學\nSTATISTICS', details: ['想換：經濟學', '可面交'], icon: '⇄' },
-  { id: 3, section: 'lost', category: '拾獲物品', title: '拾獲｜深藍色學生證', description: '在行政大樓旁的長椅上撿到，已交給總務處服務台，失主可以帶證件前往認領。', location: '總務處服務台', time: '1 小時前', tone: 'blue', coverLabel: 'FOUND\nTODAY', details: ['拾獲地點：行政大樓', '已送至服務台'], icon: '⌑' },
+  { id: 3, section: 'lost', category: '拾獲物品', title: '拾獲｜深藍色悠遊卡', description: '在行政大樓旁的長椅上撿到，已交給總務處服務台，失主可以帶證件前往認領。', location: '總務處服務台', time: '1 小時前', tone: 'blue', coverLabel: 'FOUND\nTODAY', details: ['拾獲地點：行政大樓', '已送至服務台'], icon: '⌑' },
   { id: 4, section: 'books', category: '免費贈送', title: '小王子｜中法雙語版', description: '搬宿舍整理出來的收藏，封面有些泛黃但內容完整。想讓它繼續陪伴新的讀者。', location: '人文學院 302', time: '2 小時前', tone: 'pink', coverLabel: 'LE PETIT\nPRINCE', details: ['保存良好', '文學／小說'], icon: '↗' },
   { id: 5, section: 'exchange', category: '教科書交換', title: '民法總則｜徵刑法概要', description: '民總上課用書，有少量重點筆記。希望交換一本刑法概要，版本不拘。', location: '法學院一樓', time: '昨天', tone: 'lavender', coverLabel: '民法總則\nCIVIL LAW', details: ['想換：刑法概要', '重點筆記'], icon: '⇄' },
   { id: 6, section: 'lost', category: '拾獲物品', title: '黑色摺疊傘一把', description: '下課後在共同科教室門口拾獲，傘柄有貼一張小小的黃色貼紙。', location: '共同科教室', time: '昨天', tone: 'yellow', coverLabel: 'FOUND\nUMBRELLA', details: ['拾獲地點：共同科', '黑色摺疊傘'], icon: '⌑' },
@@ -62,12 +62,12 @@ const activeLabel = computed(() => sections.find((section) => section.id === act
     <main id="home">
       <section class="hero">
         <div class="hero-copy">
-          <div class="eyebrow"><span class="eyebrow-dot"></span> 北大校園共享計畫 <span class="eyebrow-line"></span> 學生自製示範專案</div>
+          <div class="eyebrow"><span class="eyebrow-dot"></span> 北大校園共享計畫 <span class="eyebrow-line"></span> 示範專案</div>
           <h1>讓好物繼續<br /><em>流動，</em>讓善意<span class="title-period">。</span><br class="mobile-break" />在校園<span class="title-underline">循環</span></h1>
           <p>一本讀完的書、一件失而復得的物品，<br />都能成為另一段故事的開始。</p>
           <div class="hero-actions">
             <a href="#discover" class="button button-dark">開始探索 <span class="arrow">↘</span></a>
-            <RouterLink class="button button-light" to="/login"><span class="plus-round">＋</span> 分享一件好物</RouterLink>
+            <RouterLink class="button button-light" to="/login"><span class="plus-round" aria-hidden="true"></span> 分享一件好物</RouterLink>
           </div>
           <div class="hero-note"><span class="note-icon">✳</span> 分享一點點，讓校園更美好</div>
         </div>
@@ -120,7 +120,7 @@ const activeLabel = computed(() => sections.find((section) => section.id === act
 
       <section id="about" class="join-banner"><div class="join-icon">✳</div><div><div class="eyebrow">YOUR NEXT CHAPTER STARTS HERE</div><h2>你也有一件，想分享的好物嗎？</h2><p>讓它繼續旅行，遇見真正需要它的人。</p></div><RouterLink class="button button-dark" to="/login">加入這場循環 <span class="arrow">↗</span></RouterLink><span class="join-decoration">SHARE<br />THE GOOD</span></section>
       <footer><a class="brand footer-brand" href="#home"><span class="brand-mark"><span></span><span></span><span></span></span><span class="brand-copy"><b>北大漂流書櫃</b><small>CAMPUS CIRCULAR</small></span></a><span class="footer-copy">讓好物繼續流動，讓善意在校園發生。</span><span class="footer-copy footer-credit">MADE WITH CARE · FOR OUR CAMPUS</span></footer>
-      <p class="demo-note">學生自製示範專案，非學校官方網站；頁面上的刊登為示範內容。</p>
+      <p class="demo-note">示範專案，非學校官方網站；頁面上的刊登為示範內容。</p>
     </main>
   </div>
   </div>

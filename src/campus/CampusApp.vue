@@ -37,7 +37,7 @@ function logout() {
       <div class="wrap">
         <span>
           <a class="back" href="/" @click.prevent="router.push('/')">← 返回封面</a>
-          ｜學生自製示範專案，非學校官方網站
+          ｜示範專案，非學校官方網站
         </span>
         <label class="signin">
           目前身分：
@@ -54,7 +54,7 @@ function logout() {
     <header class="banner">
       <div class="wrap">
         <div class="brand" @click="go('board')">
-          <span class="brand-mark" aria-hidden="true">書</span>
+          <span class="brand-mark" aria-hidden="true">📚</span>
           <div>
             <h1>北大漂流書櫃</h1>
             <p>贈書．換書．失物招領</p>
@@ -86,7 +86,7 @@ function logout() {
 
     <footer class="site-footer">
       <div class="wrap">
-        <p>北大漂流書櫃｜學生自製示範專案，資料存在記憶體中，重新整理頁面會還原為範例資料。</p>
+        <p>北大漂流書櫃｜示範專案，資料存在記憶體中，重新整理頁面會還原為範例資料。</p>
         <p>本站不處理金流與訊息，請於校內地點面交，並勿公開電話或 Email。</p>
       </div>
     </footer>
